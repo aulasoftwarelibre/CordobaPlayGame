@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn3q58u8vefrb"]
+[gd_scene load_steps=6 format=3 uid="uid://bn3q58u8vefrb"]
 
 [ext_resource type="Script" uid="uid://dlvx5y00nu6lo" path="res://progress_bar.gd" id="1_nia5u"]
 [ext_resource type="Script" uid="uid://bvvaef7djkeb8" path="res://GameControl.gd" id="1_t4vm0"]
+[ext_resource type="Texture2D" uid="uid://brlixov4uwdq0" path="res://descarga (2).png" id="2_83ia3"]
+[ext_resource type="Script" uid="uid://drx6b843ybtju" path="res://caja.gd" id="2_fw41h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4vm0"]
 bg_color = Color(0.0784314, 0.72549, 0.14902, 1)
@@ -11,8 +13,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -277.0
+offset_top = -93.0
+offset_right = -277.0
+offset_bottom = -93.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.00104, 1.05548)
 script = ExtResource("1_t4vm0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -33,6 +40,7 @@ grow_vertical = 2
 [node name="Caja" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("2_fw41h")
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer/Caja"]
 layout_mode = 1
@@ -59,6 +67,26 @@ theme_override_constants/margin_bottom = 8
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer/Caja/ColorRect/MarginContainer"]
 layout_mode = 2
 color = Color(0.0545417, 0.439501, 0.600261, 1)
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.5
+offset_top = -17.0
+offset_right = 179.5
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.139713, 0.130677)
+texture = ExtResource("2_83ia3")
+stretch_mode = 2
+
+[node name="MovPez" type="Timer" parent="HBoxContainer/Caja"]
+autostart = true
 
 [node name="Progreso" type="Control" parent="HBoxContainer"]
 layout_mode = 2
@@ -100,4 +128,5 @@ script = ExtResource("1_nia5u")
 wait_time = 0.1
 autostart = true
 
+[connection signal="timeout" from="HBoxContainer/Caja/MovPez" to="HBoxContainer/Caja" method="_on_mov_pez_timeout"]
 [connection signal="timeout" from="HBoxContainer/Progreso/Timer" to="HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar" method="_on_timer_timeout"]
