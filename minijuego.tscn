@@ -1,0 +1,103 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn3q58u8vefrb"]
+
+[ext_resource type="Script" uid="uid://dlvx5y00nu6lo" path="res://progress_bar.gd" id="1_nia5u"]
+[ext_resource type="Script" uid="uid://bvvaef7djkeb8" path="res://GameControl.gd" id="1_t4vm0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4vm0"]
+bg_color = Color(0.0784314, 0.72549, 0.14902, 1)
+
+[node name="Minijuego" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t4vm0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(72, 270)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -135.0
+offset_right = 54.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Caja" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Caja"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+color = Color(0.462745, 0.298039, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Caja/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Caja/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.0545417, 0.439501, 0.600261, 1)
+
+[node name="Progreso" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Progreso"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+color = Color(0.462745, 0.298039, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Progreso/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/Progreso/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_t4vm0")
+value = 50.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("1_nia5u")
+
+[node name="Timer" type="Timer" parent="HBoxContainer/Progreso"]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="HBoxContainer/Progreso/Timer" to="HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar" method="_on_timer_timeout"]
