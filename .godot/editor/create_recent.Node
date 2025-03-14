@@ -1,3 +1,7 @@
+ColorRect
+Button
+Label
+CanvasLayer
 Timer
 TextureRect
 Sprite2D
