@@ -1,3 +1,4 @@
 res://minijuego.tscn
-res://GameControl.gd
 res://WinScreen.tscn
+res://caja.gd
+res://GameControl.gd
