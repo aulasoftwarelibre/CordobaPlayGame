@@ -1,6 +1,7 @@
 extends Control
 @onready var temp = $MovPez
 @onready var yMax = int($ColorRect/MarginContainer/ColorRect.size.y)
+@onready var yMin = int($ColorRect/MarginContainer/ColorRect.position.y)
 @onready var pez = $ColorRect/MarginContainer/ColorRect/TextureRect
 @onready var catch = $ColorRect/MarginContainer/ColorRect/Catch
 @onready var pBar = $"../Progreso/ColorRect/MarginContainer/ProgressBar"
@@ -10,7 +11,7 @@ extends Control
 @export var tMax: float = 5.0
 @export var pezVel: float = 0.6
 @export var catchLevantar: float = 250
-@export var velCompletado: float = 0.1
+@export var velCompletado: float = 0.1 #guarrada historica pero para que el catch no salga de la barra
 
 
 var posSalto: int = 0
@@ -24,7 +25,8 @@ func _process(delta: float) -> void:
 	pez.position.y = lerpf(pez.position.y, posSalto, pezVel)
 	
 	if Input.is_action_pressed("Pescar"):
-		catch.position.y -= catchLevantar * delta
+		if catch.position.y>yMin:
+			catch.position.y -= catchLevantar * delta
 	if catch.position.y + catch.size.y <= yMax:
 		catch.position.y += catchPeso * delta
 		
