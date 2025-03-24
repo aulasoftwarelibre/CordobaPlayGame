@@ -2,3 +2,4 @@ res://minijuego.tscn
 res://WinScreen.tscn
 res://caja.gd
 res://GameControl.gd
+res://progress_bar.gd

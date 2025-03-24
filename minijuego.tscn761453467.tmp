@@ -4,27 +4,10 @@
 [ext_resource type="Script" uid="uid://bvvaef7djkeb8" path="res://GameControl.gd" id="1_t4vm0"]
 [ext_resource type="Texture2D" uid="uid://brlixov4uwdq0" path="res://descarga (2).png" id="2_83ia3"]
 [ext_resource type="Script" uid="uid://drx6b843ybtju" path="res://caja.gd" id="2_fw41h"]
+[ext_resource type="Script" uid="uid://ucfdin4au6tb" path="res://catch.gd" id="4_adf77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fw41h"]
 size = Vector2(199.59, 268.258)
-
-[sub_resource type="GDScript" id="GDScript_fw41h"]
-script/source = "extends ColorRect
-@onready var progress_bar: BarraProgreso = $\"../../../../../Progreso/ColorRect/MarginContainer/ProgressBar\"
-
-@export var is_on:bool
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	is_on=true
-	print(\"Va\")
-
-func _process(delta: float) -> void:
-	if is_on:
-		progress_bar.value+=2
-		print(\"Va\")
-
-		
-"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4vm0"]
 bg_color = Color(0.0784314, 0.72549, 0.14902, 1)
@@ -122,7 +105,7 @@ offset_right = 15.5
 offset_bottom = 40.0
 grow_horizontal = 2
 color = Color(0.818617, 0, 0.236488, 1)
-script = SubResource("GDScript_fw41h")
+script = ExtResource("4_adf77")
 
 [node name="MovPez" type="Timer" parent="HBoxContainer/Caja"]
 autostart = true
