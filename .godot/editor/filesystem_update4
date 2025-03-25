@@ -10,3 +10,9 @@ res://Scripts/game_over.gd
 res://Scripts/Inicio.gd
 res://Escenas/Niveles/WinScreenL1.tscn
 res://Escenas/Niveles/nivel1.tscn
+res://Escenas/Niveles/Nivel1/nivel1.tscn
+res://Escenas/Niveles/Nivel1/Nivel1.gd
+res://Escenas/Niveles/Nivel1/Escnivel1.tscn
+res://Escenas/Niveles/Nivel1/GameControlN1.gd
+res://Escenas/Niveles/Nivel1/WinScreenL1.tscn
+res://Escenas/Niveles/Nivel1/WinScreenL1.gd

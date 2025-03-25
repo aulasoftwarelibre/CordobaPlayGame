@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://d172qygetrujg"]
 
-[ext_resource type="Script" uid="uid://bmgpn551bqeft" path="res://Scripts/game_over.gd" id="1_fc4ic"]
+[ext_resource type="Script" uid="uid://b1uq185i64hoa" path="res://Escenas/Niveles/Nivel1/WinScreenL1.gd" id="1_58ok4"]
 
 [node name="HasPerdido" type="CanvasLayer"]
-script = ExtResource("1_fc4ic")
+script = ExtResource("1_58ok4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = -1
@@ -22,7 +22,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Has Ganado"
+text = "Has Ganado ir a nivel dos"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/Label"]

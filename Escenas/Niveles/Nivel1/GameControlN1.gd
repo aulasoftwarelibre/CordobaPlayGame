@@ -1,5 +1,5 @@
 extends Control
-@onready var temp = $HBoxContainer/Progreso/Timer
+@onready var temp = $HBoxContainer/Caja/MovPez
 @onready var yMax = int($HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)
 @onready var yMin = int($HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.position.y)
 @onready var pez = $HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect/TextureRect
@@ -11,7 +11,7 @@ extends Control
 @export var tMax: float = 5.0
 @export var pezVel: float = 0.6
 @export var catchLevantar: float = 250
-@export var velCompletado: float = 2 #0.125 #guarrada historica pero para que el catch no salga de la barra
+@export var velCompletado: float = 2#0.125 #guarrada historica pero para que el catch no salga de la barra
 
 var posSalto: int = 0
 
@@ -23,8 +23,7 @@ func _ready() -> void:
 	
 func _process(delta):
 	if pBar.value>=100:
-		get_tree().change_scene_to_file("res://Escenas/Niveles/WinScreenL1.tscn")
-		pez.position.y = lerpf(pez.position.y, posSalto, pezVel)
+		get_tree().change_scene_to_file("res://Escenas/Niveles/Nivel1/WinScreenL1.tscn")
 	
 	if Input.is_action_pressed("Pescar"):
 		if catch.position.y>yMin:
@@ -38,12 +37,12 @@ func _process(delta):
 	
 	if pez_rect.intersects(catch_rect):
 		pBar.value += velCompletado
-		
-
+	
+	pez.position.y = lerpf(pez.position.y, posSalto, pezVel)
 func _on_mov_pez_timeout() -> void:
 	nuevoSalto()
 	print("xd")
 	
 func nuevoSalto() -> void:
 	posSalto = randi_range(yMin,yMax)
-	temp.wait_time = randf_range(tMin, 0.4)
+	temp.wait_time = randf_range(tMin, 0.8)
