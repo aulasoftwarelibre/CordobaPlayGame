@@ -14,14 +14,21 @@ extends Control
 @export var velCompletado: float = 0.125 #guarrada historica pero para que el catch no salga de la barra
 
 var posSalto: int = 0
+var anim: bool = false
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 func _ready() -> void:
+	$AnimationPlayer.connect("animation_finished", Callable(self, "_on_AnimationFinished"))
 	await get_tree().process_frame  # Espera un frame para que los nodos tengan su tamaño correcto
 	yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)  # Ahora tendrá el tamaño correcto
 	nuevoSalto()
 	
 	
 func _process(delta):
+	if anim==false:
+		animation_player.play("new_animation")
+		anim=true
 	if pBar.value>=100:
 		get_tree().change_scene_to_file("res://Escenas/Niveles/Nivel1/WinScreenL1.tscn")
 	
@@ -41,8 +48,12 @@ func _process(delta):
 	pez.position.y = lerpf(pez.position.y, posSalto, pezVel)
 func _on_mov_pez_timeout() -> void:
 	nuevoSalto()
-	print("xd")
 	
 func nuevoSalto() -> void:
 	posSalto = randi_range(yMin,yMax)
 	temp.wait_time = randf_range(tMin, tMax)
+
+
+func _on_AnimationFinished(anim_name: String):
+	if anim_name == "new_animation":
+		$AnimationPlayer.stop()
