@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm0hpqcisrt42"
-path="res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex"
+uid="uid://caxjd046sc15m"
+path="res://.godot/imported/NORM.png-7d02d12b9d23958faf00e0c25e942fed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/esturion.png"
-dest_files=["res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex"]
+source_file="res://sprites/NORM.png"
+dest_files=["res://.godot/imported/NORM.png-7d02d12b9d23958faf00e0c25e942fed.ctex"]
 
 [params]
 

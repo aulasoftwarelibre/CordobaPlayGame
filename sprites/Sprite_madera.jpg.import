@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm0hpqcisrt42"
-path="res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex"
+uid="uid://d4eq3rtei4eby"
+path="res://.godot/imported/Sprite_madera.jpg-da7b7b819f426409654efd932e51da99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/esturion.png"
-dest_files=["res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex"]
+source_file="res://sprites/Sprite_madera.jpg"
+dest_files=["res://.godot/imported/Sprite_madera.jpg-da7b7b819f426409654efd932e51da99.ctex"]
 
 [params]
 

@@ -1,38 +1,120 @@
-[gd_scene load_steps=2 format=3 uid="uid://d172qygetrujg"]
+[gd_scene load_steps=6 format=3 uid="uid://d172qygetrujg"]
 
 [ext_resource type="Script" uid="uid://b1uq185i64hoa" path="res://Escenas/Niveles/Nivel1/WinScreenL1.gd" id="1_58ok4"]
+[ext_resource type="Texture2D" uid="uid://d4eq3rtei4eby" path="res://sprites/Sprite_madera.jpg" id="2_ref2m"]
+[ext_resource type="Texture2D" uid="uid://cm0hpqcisrt42" path="res://sprites/esturion.png" id="3_qiefo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qiefo"]
+font_size = 24
+font_color = Color(0.666024, 0.304976, 4.33177e-06, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m4h6c"]
+font_color = Color(0.666667, 0.305882, 0, 1)
 
 [node name="HasPerdido" type="CanvasLayer"]
 script = ExtResource("1_58ok4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = -1
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ref2m")
+stretch_mode = 1
+
+[node name="Boton" type="ColorRect" parent="."]
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.469
+anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 0.0879822
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 126.0
+offset_top = -42.5
+offset_right = 334.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898039, 0.913725, 0.552941, 0.913725)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Boton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -33.0
+offset_right = 100.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="Boton/VBoxContainer"]
 layout_mode = 2
-text = "Has Ganado ir a nivel dos"
+text = "Has Ganado"
+label_settings = SubResource("LabelSettings_qiefo")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/Label"]
-layout_mode = 0
-offset_left = -13.0
-offset_top = 21.0
-offset_right = 106.0
-offset_bottom = 52.0
-text = "Nueva partida
+[node name="Button" type="Button" parent="Boton/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = 15.5
+offset_right = 59.5
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ir a nivel dos
 "
 icon_alignment = 1
 
-[connection signal="button_down" from="VBoxContainer/Label/Button" to="." method="_on_button_button_down"]
+[node name="CajaDescripcion" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = 117.0
+offset_right = -17.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898039, 0.913725, 0.552941, 0.913725)
+
+[node name="Descripcion" type="Label" parent="CajaDescripcion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -24.5
+offset_right = 257.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pez normal: \"Es un pez que, estadísticamente hablando, se encuentra en el punto medio de una distribución gaussiana 🤓\""
+label_settings = SubResource("LabelSettings_m4h6c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 51.0
+offset_top = -8.0
+offset_right = 2051.0
+offset_bottom = 1992.0
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("3_qiefo")
+
+[connection signal="button_down" from="Boton/VBoxContainer/Label/Button" to="." method="_on_button_button_down"]

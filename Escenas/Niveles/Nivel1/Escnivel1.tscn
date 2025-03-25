@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://xhy5fb668vyb"]
+[gd_scene load_steps=7 format=3 uid="uid://xhy5fb668vyb"]
 
 [ext_resource type="Script" uid="uid://c1lsga8u6bahn" path="res://Escenas/Niveles/Nivel1/GameControlN1.gd" id="1_bp0cv"]
 [ext_resource type="Texture2D" uid="uid://dyxsgwgmcjn5u" path="res://sprites/Fondo.jpeg" id="2_ydb42"]
-[ext_resource type="Texture2D" uid="uid://cvs3cbos5daie" path="res://sprites/esturion.png" id="3_1lll0"]
+[ext_resource type="Texture2D" uid="uid://bn7qht0euidh8" path="res://sprites/Marco madera.png" id="3_3rdeg"]
+[ext_resource type="Texture2D" uid="uid://caxjd046sc15m" path="res://sprites/NORM.png" id="4_3rdeg"]
 [ext_resource type="Script" uid="uid://dlvx5y00nu6lo" path="res://Scripts/progress_bar.gd" id="4_lmeiu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4vm0"]
@@ -27,7 +28,16 @@ offset_bottom = 1280.0
 scale = Vector2(0.51, 0.485)
 texture = ExtResource("2_ydb42")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="MarcoMadera" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 653.0
+offset_top = 2.0
+offset_right = 1151.0
+offset_bottom = 614.0
+texture = ExtResource("3_3rdeg")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarcoMadera"]
 custom_minimum_size = Vector2(72, 270)
 layout_mode = 1
 anchors_preset = 8
@@ -35,18 +45,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 316.072
-offset_top = -133.565
-offset_right = 406.072
-offset_bottom = 136.435
+offset_left = -45.0
+offset_top = -135.0
+offset_right = 45.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Caja" type="Control" parent="HBoxContainer"]
+[node name="Caja" type="Control" parent="MarcoMadera/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Caja"]
+[node name="ColorRect" type="ColorRect" parent="MarcoMadera/HBoxContainer/Caja"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,7 +66,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 color = Color(0.462745, 0.298039, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Caja/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarcoMadera/HBoxContainer/Caja/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,11 +78,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Caja/ColorRect/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer"]
 layout_mode = 2
 color = Color(0.0545417, 0.439501, 0.600261, 1)
 
-[node name="Catch" type="ColorRect" parent="HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect"]
+[node name="Catch" type="ColorRect" parent="MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -83,31 +93,31 @@ offset_bottom = 40.0
 grow_horizontal = 2
 color = Color(0.818617, 0, 0.236488, 1)
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect"]
+[node name="TextureRect" type="TextureRect" parent="MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -12.0714
-offset_top = -10.3986
-offset_right = 709.929
-offset_bottom = 669.601
+offset_left = -13.3997
+offset_top = -7.6627
+offset_right = 708.6
+offset_bottom = 672.337
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.035, 0.033)
-texture = ExtResource("3_1lll0")
+texture = ExtResource("4_3rdeg")
 stretch_mode = 2
 
-[node name="MovPez" type="Timer" parent="HBoxContainer/Caja"]
+[node name="MovPez" type="Timer" parent="MarcoMadera/HBoxContainer/Caja"]
 autostart = true
 
-[node name="Progreso" type="Control" parent="HBoxContainer"]
+[node name="Progreso" type="Control" parent="MarcoMadera/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Progreso"]
+[node name="ColorRect" type="ColorRect" parent="MarcoMadera/HBoxContainer/Progreso"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,7 +128,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 color = Color(0.462745, 0.298039, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Progreso/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarcoMadera/HBoxContainer/Progreso/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -130,7 +140,7 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/Progreso/ColorRect/MarginContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="MarcoMadera/HBoxContainer/Progreso/ColorRect/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/fill = SubResource("StyleBoxFlat_t4vm0")
@@ -139,9 +149,9 @@ fill_mode = 3
 show_percentage = false
 script = ExtResource("4_lmeiu")
 
-[node name="Timer" type="Timer" parent="HBoxContainer/Progreso"]
+[node name="Timer" type="Timer" parent="MarcoMadera/HBoxContainer/Progreso"]
 wait_time = 0.1
 autostart = true
 
-[connection signal="timeout" from="HBoxContainer/Caja/MovPez" to="." method="_on_mov_pez_timeout"]
-[connection signal="timeout" from="HBoxContainer/Progreso/Timer" to="HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar" method="_on_timer_timeout"]
+[connection signal="timeout" from="MarcoMadera/HBoxContainer/Caja/MovPez" to="." method="_on_mov_pez_timeout"]
+[connection signal="timeout" from="MarcoMadera/HBoxContainer/Progreso/Timer" to="MarcoMadera/HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar" method="_on_timer_timeout"]

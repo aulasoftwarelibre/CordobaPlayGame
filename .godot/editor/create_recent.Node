@@ -1,10 +1,12 @@
-Timer
+VBoxContainer
 TextureRect
+Label
+ColorRect
+TextureProgressBar
+Timer
 CollisionShape2D
 RigidBody2D
 Area2D
-ColorRect
 Button
-Label
 CanvasLayer
 Sprite2D

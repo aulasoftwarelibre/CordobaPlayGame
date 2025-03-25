@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm0hpqcisrt42"
-path="res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex"
+uid="uid://bn7qht0euidh8"
+path="res://.godot/imported/Marco madera.png-196fd56d5dfd8ed2c5ae252eb32d96e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/esturion.png"
-dest_files=["res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex"]
+source_file="res://sprites/Marco madera.png"
+dest_files=["res://.godot/imported/Marco madera.png-196fd56d5dfd8ed2c5ae252eb32d96e6.ctex"]
 
 [params]
 
