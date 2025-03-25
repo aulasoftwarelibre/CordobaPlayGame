@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Stardew"
-run/main_scene="uid://bn3q58u8vefrb"
+run/main_scene="uid://2h7eysmt5wdk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [input]

@@ -5,3 +5,5 @@ res://Escenas/WinScreen.tscn
 res://Scripts/caja.gd
 res://Scripts/progress_bar.gd
 res://Scripts/GameControl.gd
+res://Escenas/Inicio.tscn
+res://Scripts/game_over.gd

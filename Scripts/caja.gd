@@ -42,4 +42,4 @@ func _on_mov_pez_timeout() -> void:
 	
 func nuevoSalto() -> void:
 	posSalto = randi_range(yMin,yMax)
-	temp.wait_time = randf_range(tMin, 0.4)
+	temp.wait_time = randf_range(tMin, tMax)
