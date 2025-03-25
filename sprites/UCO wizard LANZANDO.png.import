@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brlixov4uwdq0"
-path="res://.godot/imported/descarga (2).png-5754bbf6f4c89ccf35366151426822fa.ctex"
+uid="uid://l2t5hqmtsyb2"
+path="res://.godot/imported/UCO wizard LANZANDO.png-a8646568164eb2c1076dcde4bb5c0354.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/descarga (2).png"
-dest_files=["res://.godot/imported/descarga (2).png-5754bbf6f4c89ccf35366151426822fa.ctex"]
+source_file="res://sprites/UCO wizard LANZANDO.png"
+dest_files=["res://.godot/imported/UCO wizard LANZANDO.png-a8646568164eb2c1076dcde4bb5c0354.ctex"]
 
 [params]
 

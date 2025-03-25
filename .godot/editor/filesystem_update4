@@ -7,3 +7,6 @@ res://Scripts/progress_bar.gd
 res://Scripts/GameControl.gd
 res://Escenas/Inicio.tscn
 res://Scripts/game_over.gd
+res://Scripts/Inicio.gd
+res://Escenas/Niveles/WinScreenL1.tscn
+res://Escenas/Niveles/nivel1.tscn

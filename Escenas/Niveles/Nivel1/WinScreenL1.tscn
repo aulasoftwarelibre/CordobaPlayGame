@@ -1,16 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://2h7eysmt5wdk"]
+[gd_scene load_steps=2 format=3 uid="uid://d172qygetrujg"]
 
-[ext_resource type="Script" uid="uid://ftj43llusm1a" path="res://Scripts/Inicio.gd" id="1_c5o0i"]
-[ext_resource type="Texture2D" uid="uid://dyxsgwgmcjn5u" path="res://sprites/Fondo.jpeg" id="2_c5o0i"]
+[ext_resource type="Script" uid="uid://bmgpn551bqeft" path="res://Scripts/game_over.gd" id="1_fc4ic"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_c5o0i")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1280.0
-offset_bottom = 1280.0
-scale = Vector2(0.51, 0.51)
-texture = ExtResource("2_c5o0i")
+[node name="HasPerdido" type="CanvasLayer"]
+script = ExtResource("1_fc4ic")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = -1
@@ -18,10 +11,10 @@ anchor_left = 0.5
 anchor_top = 0.469
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 265.0
-offset_top = -1.91202
-offset_right = 359.0
-offset_bottom = 18.0
+offset_left = -20.0
+offset_top = 0.0879822
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
