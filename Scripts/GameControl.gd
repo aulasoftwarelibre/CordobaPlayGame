@@ -3,5 +3,5 @@ extends Control
 
 func _process(delta):
 	if Barra.value>=100:
-		get_tree().change_scene_to_file("res://WinScreen.tscn")
+		get_tree().change_scene_to_file("res://Escenas/WinScreen.tscn")
 		

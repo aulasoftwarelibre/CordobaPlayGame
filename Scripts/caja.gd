@@ -11,7 +11,7 @@ extends Control
 @export var tMax: float = 5.0
 @export var pezVel: float = 0.6
 @export var catchLevantar: float = 250
-@export var velCompletado: float = 0.1 #guarrada historica pero para que el catch no salga de la barra
+@export var velCompletado: float = 0.125 #guarrada historica pero para que el catch no salga de la barra
 
 
 var posSalto: int = 0
@@ -41,5 +41,5 @@ func _on_mov_pez_timeout() -> void:
 	nuevoSalto()
 	
 func nuevoSalto() -> void:
-	posSalto = randi() % yMax
-	temp.wait_time = randf_range(tMin, tMax)
+	posSalto = randi_range(yMin,yMax)
+	temp.wait_time = randf_range(tMin, 0.4)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brlixov4uwdq0"
-path="res://.godot/imported/descarga (2).png-08b46cc38a075b071958e417eb7841ba.ctex"
+uid="uid://e2hn18xa2u6r"
+path="res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://descarga (2).png"
-dest_files=["res://.godot/imported/descarga (2).png-08b46cc38a075b071958e417eb7841ba.ctex"]
+source_file="res://sprites/esturion.png"
+dest_files=["res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex"]
 
 [params]
 

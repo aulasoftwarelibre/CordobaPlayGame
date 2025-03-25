@@ -1,3 +1,7 @@
 res://minijuego.tscn
-res://caja.gd
 res://WinScreen.tscn
+res://Escenas/minijuego.tscn
+res://Escenas/WinScreen.tscn
+res://Scripts/caja.gd
+res://Scripts/progress_bar.gd
+res://Scripts/GameControl.gd

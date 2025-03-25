@@ -1,11 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1742843121
-caja.gd::GDScript::8401838873213102170::1742843077::0::1::::<>Control<><>0<>0<><>::
-descarga (2).png::CompressedTexture2D/CompressedTexture2D::3602866759149270933::1741891659::1742833904::1::::<><><>0<>0<>88eaba40d71ddc48561239ea351c3374<>res://.godot/imported/descarga (2).png-08b46cc38a075b071958e417eb7841ba.ctex::
-GameControl.gd::GDScript::3903745788301879059::1742842120::0::1::::<>Control<><>0<>0<><>::
-GameOver.tscn::PackedScene/PackedScene::3806478446622252963::1741891659::0::1::::<><><>0<>0<><>::uid://bmgpn551bqeft::::res://game_over.gd
+::res://::1742915792
+::res://Escenas/::1742915721
+GameOver.tscn::PackedScene/PackedScene::3806478446622252963::1742915306::0::1::::<><><>0<>0<><>::uid://bmgpn551bqeft::::res://Scripts/game_over.gd
+minijuego.tscn::PackedScene/PackedScene::3357705039496844775::1742915721::0::1::::<><><>0<>0<><>::uid://bvvaef7djkeb8::::res://Scripts/GameControl.gd<>uid://drx6b843ybtju::::res://Scripts/caja.gd<>uid://brlixov4uwdq0::::res://sprites/descarga (2).png<>uid://dlvx5y00nu6lo::::res://Scripts/progress_bar.gd
+WinScreen.tscn::PackedScene/PackedScene::7413226419110287090::1742915721::0::1::::<><><>0<>0<><>::uid://bmgpn551bqeft::::res://Scripts/game_over.gd
+::res://Scripts/::1742915772
+caja.gd::GDScript/GDScript::8401838873213102170::1742915455::0::1::::<>Control<><>0<>0<><>::
+GameControl.gd::GDScript/GDScript::3903745788301879059::1742842120::0::1::::<>Control<><>0<>0<><>::
 game_over.gd::GDScript/GDScript::3242008667314036765::1741891659::0::1::::<>CanvasLayer<><>0<>0<><>::
-icon.svg::CompressedTexture2D/CompressedTexture2D::5075191382743551383::1741891659::1742833904::1::::<><><>0<>0<>2a88a4a9ddff3a70dce05ff9d7164cef<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-minijuego.tscn::PackedScene::3357705039496844775::1742843078::0::1::::<><><>0<>0<><>::uid://dlvx5y00nu6lo::::res://progress_bar.gd<>uid://bvvaef7djkeb8::::res://GameControl.gd<>uid://brlixov4uwdq0::::res://descarga (2).png<>uid://drx6b843ybtju::::res://caja.gd
-progress_bar.gd::GDScript::7976142628918284368::1742842562::0::1::::BarraProgreso<>ProgressBar<><>0<>0<><>::
-WinScreen.tscn::PackedScene::7413226419110287090::1742843078::0::1::::<><><>0<>0<><>::uid://bmgpn551bqeft::::res://game_over.gd
+progress_bar.gd::GDScript/GDScript::7976142628918284368::1742915493::0::1::::BarraProgreso<>ProgressBar<><>0<>0<><>::
+WhatsApp_Image_2025-03-25_at_16.14.38-removebg-preview.png::CompressedTexture2D/CompressedTexture2D::2656706642945216295::1742915772::1742915772::1::::<><><>0<>0<>24c816d28b49d83157e6dd68343f367a<>res://.godot/imported/WhatsApp_Image_2025-03-25_at_16.14.38-removebg-preview.png-97ebdda0c656ee354d9ffbe50e74b452.ctex::
+::res://sprites/::1742915792
+descarga (2).png::CompressedTexture2D/CompressedTexture2D::3602866759149270933::1741891659::1742915309::1::::<><><>0<>0<>747f25a515f89932f72a7973fafae221<>res://.godot/imported/descarga (2).png-5754bbf6f4c89ccf35366151426822fa.ctex::
+esturion.png::CompressedTexture2D::336943225813622007::1742915782::1742915792::1::::<><><>0<>0<>46d3f1619d3300529809fb3f60c73c3e<>res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex::
