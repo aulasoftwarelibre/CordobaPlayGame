@@ -1,5 +1,6 @@
 res://Escenas/Niveles/Nivel1/Escnivel1.tscn
-res://Escenas/Niveles/Nivel1/WinScreenL1.gd
 res://Escenas/Niveles/Nivel2/GameControlN2.gd
 res://Escenas/Niveles/Nivel2/WinScreenL2.tscn
 res://Escenas/Niveles/Nivel2/Escnivel2.tscn
+res://Escenas/Inicio.tscn
+res://Escenas/Niveles/Nivel1/GameControlN1.gd

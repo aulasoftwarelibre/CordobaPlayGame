@@ -56,4 +56,6 @@ func nuevoSalto() -> void:
 
 func _on_AnimationFinished(anim_name: String):
 	if anim_name == "new_animation":
-		$AnimationPlayer.stop()
+		var anim_length = $AnimationPlayer.current_animation_length
+		$AnimationPlayer.seek(anim_length, true)
+		$AnimationPlayer.speed_scale = 0.0  # Congela la animación

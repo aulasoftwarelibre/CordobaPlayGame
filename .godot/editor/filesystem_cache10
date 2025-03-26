@@ -1,39 +1,39 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1743004196
-README.md::TextFile/TextFile::-1::1743004025::0::1::::<><><>0<>0<><>::
-::res://Escenas/::1743004025
-GameOver.tscn::PackedScene/PackedScene::3806478446622252963::1743004025::0::1::::<><><>0<>0<><>::uid://bmgpn551bqeft::::res://Scripts/game_over.gd
-Inicio.tscn::PackedScene/PackedScene::1911500798388142312::1743004025::0::1::::<><><>0<>0<><>::uid://ftj43llusm1a::::res://Scripts/Inicio.gd<>uid://dyxsgwgmcjn5u::::res://sprites/Fondo.jpeg<>uid://bn7qht0euidh8::::res://sprites/Marco madera.png<>uid://bmexfcts150a7::::res://sprites/UCO wizard.png
-minijuego.tscn::PackedScene/PackedScene::3357705039496844775::1743004025::0::1::::<><><>0<>0<><>::uid://bvvaef7djkeb8::::res://Scripts/GameControl.gd<>uid://dyxsgwgmcjn5u::::res://sprites/Fondo.jpeg<>uid://cvs3cbos5daie::::res://sprites/esturion.png<>uid://dlvx5y00nu6lo::::res://Scripts/progress_bar.gd
-WinScreen.tscn::PackedScene/PackedScene::7413226419110287090::1743004025::0::1::::<><><>0<>0<><>::uid://bmgpn551bqeft::::res://Scripts/game_over.gd
-::res://Escenas/Niveles/::1743004173
-::res://Escenas/Niveles/Nivel1/::1743004083
-Escnivel1.tscn::PackedScene/PackedScene::1630305095209507101::1743004083::0::1::::<><><>0<>0<><>::uid://c1lsga8u6bahn::::res://Escenas/Niveles/Nivel1/GameControlN1.gd<>uid://dyxsgwgmcjn5u::::res://sprites/Fondo.jpeg<>uid://bn7qht0euidh8::::res://sprites/Marco madera.png<>uid://caxjd046sc15m::::res://sprites/NORM.png<>uid://dlvx5y00nu6lo::::res://Scripts/progress_bar.gd<>uid://bmexfcts150a7::::res://sprites/UCO wizard.png<>uid://l2t5hqmtsyb2::::res://sprites/UCO wizard LANZANDO.png<>uid://p7k3sufeig55::::res://sprites/UCO wizard PESCANDO.png
-GameControlN1.gd::GDScript/GDScript::6621563129831647539::1743004025::0::1::::<>Control<><>0<>0<><>::
-WinScreenL1.gd::GDScript/GDScript::4253637855909674704::1743004025::0::1::::<>CanvasLayer<><>0<>0<><>::
-WinScreenL1.tscn::PackedScene/PackedScene::9051901275342284480::1743004025::0::1::::<><><>0<>0<><>::uid://b1uq185i64hoa::::res://Escenas/Niveles/Nivel1/WinScreenL1.gd<>uid://d4eq3rtei4eby::::res://sprites/Sprite_madera.jpg<>uid://cm0hpqcisrt42::::res://sprites/esturion.png
-::res://Escenas/Niveles/Nivel2/::1743004196
-Escnivel2.tscn::PackedScene/PackedScene::2489132705020657989::1743004173::0::1::::<><><>0<>0<><>::uid://c1lsga8u6bahn::::res://Escenas/Niveles/Nivel1/GameControlN1.gd<>uid://dyxsgwgmcjn5u::::res://sprites/Fondo.jpeg<>uid://bn7qht0euidh8::::res://sprites/Marco madera.png<>uid://caxjd046sc15m::::res://sprites/NORM.png<>uid://dlvx5y00nu6lo::::res://Scripts/progress_bar.gd<>uid://bmexfcts150a7::::res://sprites/UCO wizard.png<>uid://l2t5hqmtsyb2::::res://sprites/UCO wizard LANZANDO.png<>uid://p7k3sufeig55::::res://sprites/UCO wizard PESCANDO.png
-GameControlN2.gd::GDScript::2493207406925045451::1743004173::0::1::::<>Control<><>0<>0<><>::
-WinScreenL1.tscn::PackedScene/PackedScene::4803392281091362944::1743004173::0::1::::<><><>0<>0<><>::uid://b1uq185i64hoa::::res://Escenas/Niveles/Nivel1/WinScreenL1.gd<>uid://d4eq3rtei4eby::::res://sprites/Sprite_madera.jpg<>uid://cm0hpqcisrt42::::res://sprites/esturion.png
-WinScreenL2.gd::GDScript::7925003783630606575::1743004173::0::1::::<>CanvasLayer<><>0<>0<><>::
-::res://Scripts/::1743004025
-GameControl.gd::GDScript/GDScript::3903745788301879059::1743004025::0::1::::<>Control<><>0<>0<><>::
-game_over.gd::GDScript/GDScript::3242008667314036765::1743004025::0::1::::<>CanvasLayer<><>0<>0<><>::
-Inicio.gd::GDScript/GDScript::390767124649329044::1743004025::0::1::::<>CanvasLayer<><>0<>0<><>::
-progress_bar.gd::GDScript/GDScript::7976142628918284368::1743004025::0::1::::BarraProgreso<>ProgressBar<><>0<>0<><>::
-::res://sprites/::1743004071
-Anzuelo.png::CompressedTexture2D/CompressedTexture2D::540991085756870477::1743004025::1743004070::1::::<><><>0<>0<>d868d77f06a9701445d018443b41b972<>res://.godot/imported/Anzuelo.png-04a9e77508d192a02fe59165452b8ef4.ctex::
-BUZO.png::CompressedTexture2D/CompressedTexture2D::271178764104857929::1743004025::1743004070::1::::<><><>0<>0<>6b6871e0dbd7b920674974ae61846de0<>res://.godot/imported/BUZO.png-d1a3640ac3f47958d26e50c6a9e106df.ctex::
-esturion.png::CompressedTexture2D/CompressedTexture2D::5667169584603463529::1743004025::1743004070::1::::<><><>0<>0<>55dfe55a1e316badc3cef10740f419db<>res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex::
-Fondo.jpeg::CompressedTexture2D/CompressedTexture2D::8892379772699478188::1743004025::1743004070::1::::<><><>0<>0<>de8ee5b5d76cc52e0f1c0e07fc51ed37<>res://.godot/imported/Fondo.jpeg-9305aeb655a0e84178da911a35ce6d92.ctex::
-Marco madera.png::CompressedTexture2D/CompressedTexture2D::3365920748331582299::1743004025::1743004070::1::::<><><>0<>0<>bae03258df5ee78beda5bb9eaef0523c<>res://.godot/imported/Marco madera.png-196fd56d5dfd8ed2c5ae252eb32d96e6.ctex::
-NORM.png::CompressedTexture2D/CompressedTexture2D::4820875225361933376::1743004025::1743004070::1::::<><><>0<>0<>1efd90d8bbddb180d4180220c3be5d2b<>res://.godot/imported/NORM.png-7d02d12b9d23958faf00e0c25e942fed.ctex::
-PEZ ESTUDIANTE.png::CompressedTexture2D/CompressedTexture2D::5195599749852022638::1743004025::1743004070::1::::<><><>0<>0<>f551d6c6f42c74402251ebfe6e27b55a<>res://.godot/imported/PEZ ESTUDIANTE.png-2ada7ac45bd79324b87e517fe035bf65.ctex::
-PEZ INFORMÁTICO.png::CompressedTexture2D/CompressedTexture2D::1441195393501071157::1743004025::1743004070::1::::<><><>0<>0<>3a8a528721fcd3a09116b5b0825289f9<>res://.godot/imported/PEZ INFORMÁTICO.png-af1c61157098e93c5161548eeb3963b7.ctex::
-Sprite_madera.jpg::CompressedTexture2D/CompressedTexture2D::9204018424153895154::1743004025::1743004070::1::::<><><>0<>0<>0cb6d5fd8f90a40b245558b3da688bb8<>res://.godot/imported/Sprite_madera.jpg-da7b7b819f426409654efd932e51da99.ctex::
-UCO wizard LANZANDO.png::CompressedTexture2D/CompressedTexture2D::829023069009352285::1743004025::1743004070::1::::<><><>0<>0<>192f97e0ae62834990ceb721465876fd<>res://.godot/imported/UCO wizard LANZANDO.png-a8646568164eb2c1076dcde4bb5c0354.ctex::
-UCO wizard PESCANDO.png::CompressedTexture2D/CompressedTexture2D::1119550891406636114::1743004025::1743004070::1::::<><><>0<>0<>329a6e928a55e2b788240679b58a73fb<>res://.godot/imported/UCO wizard PESCANDO.png-9ac637983185d4e698fd50f15f006673.ctex::
-UCO wizard QUIETO.png::CompressedTexture2D/CompressedTexture2D::5507854514880701281::1743004025::1743004070::1::::<><><>0<>0<>e8bf273a314ba9895247e33acb4ac939<>res://.godot/imported/UCO wizard QUIETO.png-7a493a6304dff3ce3c17b56a7cbf0f52.ctex::
-UCO wizard.png::CompressedTexture2D/CompressedTexture2D::3238349873420656532::1743004025::1743004070::1::::<><><>0<>0<>4411dc0887e189ad6bcf5fbb9470ffde<>res://.godot/imported/UCO wizard.png-22f905b84169daa83248b0d9d204d981.ctex::
-WILLIAM.png::CompressedTexture2D/CompressedTexture2D::8344384870974605711::1743004025::1743004070::1::::<><><>0<>0<>efa4c5b4fd9483aa0065746f19317a65<>res://.godot/imported/WILLIAM.png-500853a25d993b32f12a4ec1995f9c81.ctex::
+::res://::1743019808
+README.md::TextFile::-1::1743003260::0::1::::<><><>0<>0<><>::
+::res://Escenas/::1743003260
+GameOver.tscn::PackedScene::3806478446622252963::1743003260::0::1::::<><><>0<>0<><>::uid://bmgpn551bqeft::::res://Scripts/game_over.gd
+Inicio.tscn::PackedScene::1911500798388142312::1743003260::0::1::::<><><>0<>0<><>::uid://ftj43llusm1a::::res://Scripts/Inicio.gd<>uid://dyxsgwgmcjn5u::::res://sprites/Fondo.jpeg<>uid://bn7qht0euidh8::::res://sprites/Marco madera.png<>uid://bmexfcts150a7::::res://sprites/UCO wizard.png
+minijuego.tscn::PackedScene::3357705039496844775::1743003260::0::1::::<><><>0<>0<><>::uid://bvvaef7djkeb8::::res://Scripts/GameControl.gd<>uid://dyxsgwgmcjn5u::::res://sprites/Fondo.jpeg<>uid://cvs3cbos5daie::::res://sprites/esturion.png<>uid://dlvx5y00nu6lo::::res://Scripts/progress_bar.gd
+WinScreen.tscn::PackedScene::7413226419110287090::1743003260::0::1::::<><><>0<>0<><>::uid://bmgpn551bqeft::::res://Scripts/game_over.gd
+::res://Escenas/Niveles/::1743019798
+::res://Escenas/Niveles/Nivel1/::1743019798
+Escnivel1.tscn::PackedScene::1630305095209507101::1743019798::0::1::::<><><>0<>0<><>::uid://c1lsga8u6bahn::::res://Escenas/Niveles/Nivel1/GameControlN1.gd<>uid://dyxsgwgmcjn5u::::res://sprites/Fondo.jpeg<>uid://bn7qht0euidh8::::res://sprites/Marco madera.png<>uid://caxjd046sc15m::::res://sprites/NORM.png<>uid://dlvx5y00nu6lo::::res://Scripts/progress_bar.gd<>uid://bmexfcts150a7::::res://sprites/UCO wizard.png<>uid://l2t5hqmtsyb2::::res://sprites/UCO wizard LANZANDO.png<>uid://p7k3sufeig55::::res://sprites/UCO wizard PESCANDO.png
+GameControlN1.gd::GDScript::6621563129831647539::1743019792::0::1::::<>Control<><>0<>0<><>::
+WinScreenL1.gd::GDScript::4253637855909674704::1743019798::0::1::::<>CanvasLayer<><>0<>0<><>::
+WinScreenL1.tscn::PackedScene::9051901275342284480::1743003260::0::1::::<><><>0<>0<><>::uid://b1uq185i64hoa::::res://Escenas/Niveles/Nivel1/WinScreenL1.gd<>uid://d4eq3rtei4eby::::res://sprites/Sprite_madera.jpg<>uid://cm0hpqcisrt42::::res://sprites/esturion.png
+::res://Escenas/Niveles/Nivel2/::1743019798
+Escnivel2.tscn::PackedScene::2489132705020657989::1743019798::0::1::::<><><>0<>0<><>::uid://bbry05tbcy8pj::::res://Escenas/Niveles/Nivel2/GameControlN2.gd<>uid://dyxsgwgmcjn5u::::res://sprites/Fondo.jpeg<>uid://bn7qht0euidh8::::res://sprites/Marco madera.png<>uid://caxjd046sc15m::::res://sprites/NORM.png<>uid://dlvx5y00nu6lo::::res://Scripts/progress_bar.gd<>uid://bmexfcts150a7::::res://sprites/UCO wizard.png<>uid://l2t5hqmtsyb2::::res://sprites/UCO wizard LANZANDO.png<>uid://p7k3sufeig55::::res://sprites/UCO wizard PESCANDO.png
+GameControlN2.gd::GDScript::2493207406925045451::1743019798::0::1::::<>Control<><>0<>0<><>::
+WinScreenL2.gd::GDScript::7925003783630606575::1743019798::0::1::::<>CanvasLayer<><>0<>0<><>::
+WinScreenL2.tscn::PackedScene::4803392281091362944::1743019798::0::1::::<><><>0<>0<><>::uid://dk56wis36p0xv::::res://Escenas/Niveles/Nivel2/WinScreenL2.gd<>uid://d4eq3rtei4eby::::res://sprites/Sprite_madera.jpg<>uid://cga11eywl5fle::::res://sprites/PEZ ESTUDIANTE.png
+::res://Scripts/::1743003260
+GameControl.gd::GDScript::3903745788301879059::1743003260::0::1::::<>Control<><>0<>0<><>::
+game_over.gd::GDScript::3242008667314036765::1743003260::0::1::::<>CanvasLayer<><>0<>0<><>::
+Inicio.gd::GDScript::390767124649329044::1743003260::0::1::::<>CanvasLayer<><>0<>0<><>::
+progress_bar.gd::GDScript::7976142628918284368::1743003260::0::1::::BarraProgreso<>ProgressBar<><>0<>0<><>::
+::res://sprites/::1743003260
+Anzuelo.png::CompressedTexture2D/CompressedTexture2D::540991085756870477::1743003260::1743003260::1::::<><><>0<>0<>d868d77f06a9701445d018443b41b972<>res://.godot/imported/Anzuelo.png-04a9e77508d192a02fe59165452b8ef4.ctex::
+BUZO.png::CompressedTexture2D/CompressedTexture2D::271178764104857929::1743003260::1743003260::1::::<><><>0<>0<>6b6871e0dbd7b920674974ae61846de0<>res://.godot/imported/BUZO.png-d1a3640ac3f47958d26e50c6a9e106df.ctex::
+esturion.png::CompressedTexture2D/CompressedTexture2D::5667169584603463529::1743003260::1743003260::1::::<><><>0<>0<>55dfe55a1e316badc3cef10740f419db<>res://.godot/imported/esturion.png-e0527df7d5f01070d4ff6d49b748db6b.ctex::
+Fondo.jpeg::CompressedTexture2D/CompressedTexture2D::8892379772699478188::1743003260::1743003260::1::::<><><>0<>0<>de8ee5b5d76cc52e0f1c0e07fc51ed37<>res://.godot/imported/Fondo.jpeg-9305aeb655a0e84178da911a35ce6d92.ctex::
+Marco madera.png::CompressedTexture2D/CompressedTexture2D::3365920748331582299::1743003260::1743003260::1::::<><><>0<>0<>bae03258df5ee78beda5bb9eaef0523c<>res://.godot/imported/Marco madera.png-196fd56d5dfd8ed2c5ae252eb32d96e6.ctex::
+NORM.png::CompressedTexture2D/CompressedTexture2D::4820875225361933376::1743003260::1743003260::1::::<><><>0<>0<>1efd90d8bbddb180d4180220c3be5d2b<>res://.godot/imported/NORM.png-7d02d12b9d23958faf00e0c25e942fed.ctex::
+PEZ ESTUDIANTE.png::CompressedTexture2D/CompressedTexture2D::5195599749852022638::1743003260::1743003260::1::::<><><>0<>0<>f551d6c6f42c74402251ebfe6e27b55a<>res://.godot/imported/PEZ ESTUDIANTE.png-2ada7ac45bd79324b87e517fe035bf65.ctex::
+PEZ INFORMÁTICO.png::CompressedTexture2D/CompressedTexture2D::1441195393501071157::1743003260::1743003260::1::::<><><>0<>0<>3a8a528721fcd3a09116b5b0825289f9<>res://.godot/imported/PEZ INFORMÁTICO.png-af1c61157098e93c5161548eeb3963b7.ctex::
+Sprite_madera.jpg::CompressedTexture2D/CompressedTexture2D::9204018424153895154::1743003260::1743003260::1::::<><><>0<>0<>0cb6d5fd8f90a40b245558b3da688bb8<>res://.godot/imported/Sprite_madera.jpg-da7b7b819f426409654efd932e51da99.ctex::
+UCO wizard LANZANDO.png::CompressedTexture2D/CompressedTexture2D::829023069009352285::1743003260::1743003260::1::::<><><>0<>0<>192f97e0ae62834990ceb721465876fd<>res://.godot/imported/UCO wizard LANZANDO.png-a8646568164eb2c1076dcde4bb5c0354.ctex::
+UCO wizard PESCANDO.png::CompressedTexture2D/CompressedTexture2D::1119550891406636114::1743003260::1743003260::1::::<><><>0<>0<>329a6e928a55e2b788240679b58a73fb<>res://.godot/imported/UCO wizard PESCANDO.png-9ac637983185d4e698fd50f15f006673.ctex::
+UCO wizard QUIETO.png::CompressedTexture2D/CompressedTexture2D::5507854514880701281::1743003260::1743003260::1::::<><><>0<>0<>e8bf273a314ba9895247e33acb4ac939<>res://.godot/imported/UCO wizard QUIETO.png-7a493a6304dff3ce3c17b56a7cbf0f52.ctex::
+UCO wizard.png::CompressedTexture2D/CompressedTexture2D::3238349873420656532::1743003260::1743003260::1::::<><><>0<>0<>4411dc0887e189ad6bcf5fbb9470ffde<>res://.godot/imported/UCO wizard.png-22f905b84169daa83248b0d9d204d981.ctex::
+WILLIAM.png::CompressedTexture2D/CompressedTexture2D::8344384870974605711::1743003260::1743003260::1::::<><><>0<>0<>efa4c5b4fd9483aa0065746f19317a65<>res://.godot/imported/WILLIAM.png-500853a25d993b32f12a4ec1995f9c81.ctex::
