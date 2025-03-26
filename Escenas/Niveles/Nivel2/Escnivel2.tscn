@@ -172,31 +172,29 @@ color = Color(0.0545417, 0.439501, 0.600261, 1)
 
 [node name="Catch" type="ColorRect" parent="Minijuego/MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -13.5
-offset_right = 13.5
-offset_bottom = 65.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -189.0
 grow_horizontal = 2
 color = Color(0.818617, 0, 0.236488, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Minijuego/MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -13.3997
-offset_top = -7.6627
-offset_right = 708.6
-offset_bottom = 672.337
+anchors_preset = -1
+anchor_left = 0.037
+anchor_top = 0.004
+anchor_right = 0.973
+anchor_bottom = 1.0
+offset_left = 0.000999987
+offset_top = -0.016
+offset_right = 696.729
+offset_bottom = 427.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.035, 0.033)
 texture = ExtResource("4_16kg5")
-stretch_mode = 2
+expand_mode = 1
 
 [node name="MovPez" type="Timer" parent="Minijuego/MarcoMadera/HBoxContainer/Caja"]
 autostart = true

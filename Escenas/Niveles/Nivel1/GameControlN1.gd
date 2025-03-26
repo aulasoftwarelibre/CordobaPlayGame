@@ -1,6 +1,6 @@
 extends Control
 @onready var temp = $MarcoMadera/HBoxContainer/Caja/MovPez
-@onready var yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)
+@onready var yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y - ($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect/TextureRect.size.y * 1.25))
 @onready var yMin = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.position.y)
 @onready var pez = $MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect/TextureRect
 @onready var catch = $MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect/Catch
