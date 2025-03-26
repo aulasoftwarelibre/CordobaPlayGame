@@ -43,7 +43,7 @@ func _process(delta):
 	var catch_rect = catch.get_global_rect()
 	
 	if pez_rect.intersects(catch_rect):
-		pBar.value += velCompletado
+		pBar.value += velCompletado * delta * 250
 	
 	pez.position.y = lerpf(pez.position.y, posSalto, pezVel)
 func _on_mov_pez_timeout() -> void:
