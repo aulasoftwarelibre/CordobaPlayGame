@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://3sumfr06ry7m"]
+
+[ext_resource type="Script" uid="uid://d0mjn1pjormoc" path="res://Escenas/Niveles/Nivel3/WinScreenL3.gd" id="1_s6mns"]
+[ext_resource type="Texture2D" uid="uid://d4eq3rtei4eby" path="res://sprites/Sprite_madera.jpg" id="2_py3ha"]
+[ext_resource type="Texture2D" uid="uid://usejo4umefab" path="res://sprites/PEZ INFORMÁTICO.png" id="3_s6mns"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qiefo"]
+font_size = 24
+font_color = Color(0.666024, 0.304976, 4.33177e-06, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m4h6c"]
+font_color = Color(0.666667, 0.305882, 0, 1)
+
+[node name="HasPerdido" type="CanvasLayer"]
+script = ExtResource("1_s6mns")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_py3ha")
+stretch_mode = 1
+
+[node name="Boton" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = -42.5
+offset_right = 334.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898039, 0.913725, 0.552941, 0.913725)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Boton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -33.0
+offset_right = 100.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="Boton/VBoxContainer"]
+layout_mode = 2
+text = "Has Ganado"
+label_settings = SubResource("LabelSettings_qiefo")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Boton/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = 15.5
+offset_right = 59.5
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ir a nivel cuatro
+"
+icon_alignment = 1
+
+[node name="CajaDescripcion" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = 117.0
+offset_right = 7.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898039, 0.913725, 0.552941, 0.913725)
+
+[node name="Descripcion" type="Label" parent="CajaDescripcion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -24.5
+offset_right = 257.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pez informático: \"Este pez es un pariente del \"pez estudiante\". Son muy raros de ver porque normalmente se quedan en su hábitat natural; su habitación. Aunque deberían ventilarla más a menudo.\""
+label_settings = SubResource("LabelSettings_m4h6c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 132.0
+offset_top = 90.0
+offset_right = 2475.0
+offset_bottom = 1961.0
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("3_s6mns")
+
+[connection signal="button_down" from="Boton/VBoxContainer/Label/Button" to="." method="_on_button_button_down"]
