@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://qq1yeu2arclt"]
+
+[ext_resource type="Script" uid="uid://bmgpn551bqeft" path="res://Scripts/game_over.gd" id="1_cre1v"]
+[ext_resource type="Texture2D" uid="uid://d4eq3rtei4eby" path="res://sprites/Sprite_madera.jpg" id="2_frbl4"]
+[ext_resource type="Texture2D" uid="uid://bmexfcts150a7" path="res://sprites/UCO wizard.png" id="3_gk736"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ed8v"]
+font_color = Color(0.666667, 0.305882, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h535o"]
+font_size = 24
+font_color = Color(0.666024, 0.304976, 4.33177e-06, 1)
+
+[node name="HasPerdido" type="CanvasLayer"]
+script = ExtResource("1_cre1v")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_frbl4")
+stretch_mode = 1
+
+[node name="CajaDescripcion" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -506.0
+offset_top = 139.0
+offset_right = 4.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898039, 0.913725, 0.552941, 0.913725)
+
+[node name="Descripcion" type="Label" parent="CajaDescripcion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -24.5
+offset_right = 257.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Muchas gracias por jugar !!"
+label_settings = SubResource("LabelSettings_7ed8v")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Boton" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = -42.5
+offset_right = 334.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898039, 0.913725, 0.552941, 0.913725)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Boton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -33.0
+offset_right = 100.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="Boton/VBoxContainer"]
+layout_mode = 2
+text = "Has Ganado"
+label_settings = SubResource("LabelSettings_h535o")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Boton/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = 15.5
+offset_right = 59.5
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ir a Inicio
+"
+icon_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 175.0
+offset_top = 81.0
+offset_right = 215.0
+offset_bottom = 121.0
+scale = Vector2(8.725, 8.725)
+texture = ExtResource("3_gk736")
+
+[connection signal="button_down" from="Boton/VBoxContainer/Label/Button" to="." method="_on_button_button_down"]

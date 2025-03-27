@@ -1,14 +1,15 @@
 extends Control
 @onready var temp = $MarcoMadera/HBoxContainer/Caja/MovPez
-@onready var yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y - ($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect/TextureRect.size.y * 1.25))
-@onready var yMin = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.position.y)
 @onready var pez = $MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect/TextureRect
+@onready var yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)-pez.size.y*pez.scale.y    
+@onready var yMaxSalto = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)-pez.size.y*pez.scale.y    
+@onready var yMin = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.position.y)
 @onready var catch = $MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect/Catch
-@onready var pBar = $MarcoMadera/HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar
+@onready var pBar: BarraProgreso = $MarcoMadera/HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar
 
 @export var catchPeso: float = 100
 @export var tMin: float = 0.6
-@export var tMax: float = 5.0
+@export var tMax: float = 5
 @export var pezVel: float = 0.6
 @export var catchLevantar: float = 250
 @export var velCompletado: float = 0.125 #guarrada historica pero para que el catch no salga de la barra
@@ -21,7 +22,8 @@ var anim: bool = false
 func _ready() -> void:
 	$AnimationPlayer.connect("animation_finished", Callable(self, "_on_AnimationFinished"))
 	await get_tree().process_frame  # Espera un frame para que los nodos tengan su tamaño correcto
-	yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)  # Ahora tendrá el tamaño correcto
+	yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y) # Ahora tendrá el tamaño correcto
+	yMaxSalto = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)-pez.size.y*pez.scale.y
 	nuevoSalto()
 	
 	
@@ -46,11 +48,12 @@ func _process(delta):
 		pBar.value += velCompletado * delta * 250
 	
 	pez.position.y = lerpf(pez.position.y, posSalto, pezVel)
+	
 func _on_mov_pez_timeout() -> void:
 	nuevoSalto()
 	
 func nuevoSalto() -> void:
-	posSalto = randi_range(yMin,yMax)
+	posSalto = randi_range(yMin,yMaxSalto)
 	temp.wait_time = randf_range(tMin, tMax)
 
 

@@ -1,7 +1,7 @@
+TextureRect
 AnimationPlayer
 AnimationTree
 VBoxContainer
-TextureRect
 Label
 ColorRect
 TextureProgressBar

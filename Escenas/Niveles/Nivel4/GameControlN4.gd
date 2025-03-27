@@ -1,8 +1,9 @@
 extends Control
 @onready var temp = $MarcoMadera/HBoxContainer/Caja/MovPez
-@onready var yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)
-@onready var yMin = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.position.y)
 @onready var pez = $MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect/TextureRect
+@onready var yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)    
+@onready var yMin = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.position.y)
+@onready var yMaxSalto = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)-pez.size.y*pez.scale.y    
 @onready var catch = $MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect/Catch
 @onready var pBar: BarraProgreso = $MarcoMadera/HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar
 
@@ -22,7 +23,8 @@ var anim: bool = false
 func _ready() -> void:
 	$AnimationPlayer.connect("animation_finished", Callable(self, "_on_AnimationFinished"))
 	await get_tree().process_frame  # Espera un frame para que los nodos tengan su tamaño correcto
-	yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)  # Ahora tendrá el tamaño correcto
+	yMax = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y) # Ahora tendrá el tamaño correcto
+	yMaxSalto = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)-pez.size.y*pez.scale.y    
 	nuevoSalto()
 	
 	
@@ -51,7 +53,7 @@ func _on_mov_pez_timeout() -> void:
 	nuevoSalto()
 	
 func nuevoSalto() -> void:
-	posSalto = randi_range(yMin,yMax)
+	posSalto = randi_range(yMin,yMaxSalto)
 	temp.wait_time = randf_range(tMin, tMax)
 
 

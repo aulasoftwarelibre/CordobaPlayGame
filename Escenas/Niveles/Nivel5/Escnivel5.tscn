@@ -1,0 +1,268 @@
+[gd_scene load_steps=13 format=3 uid="uid://c7eksi8wdmhsm"]
+
+[ext_resource type="Script" uid="uid://cumqt0fjlewtn" path="res://Escenas/Niveles/Nivel5/GameControlN5.gd" id="1_i2uqe"]
+[ext_resource type="Texture2D" uid="uid://dyxsgwgmcjn5u" path="res://sprites/Fondo.jpeg" id="2_ig4hx"]
+[ext_resource type="Texture2D" uid="uid://bn7qht0euidh8" path="res://sprites/Marco madera.png" id="3_08dbg"]
+[ext_resource type="Texture2D" uid="uid://caxjd046sc15m" path="res://sprites/NORM.png" id="4_tm2qp"]
+[ext_resource type="Script" uid="uid://dlvx5y00nu6lo" path="res://Scripts/progress_bar.gd" id="5_74cd1"]
+[ext_resource type="Texture2D" uid="uid://bmexfcts150a7" path="res://sprites/UCO wizard.png" id="6_ajgw2"]
+[ext_resource type="Texture2D" uid="uid://l2t5hqmtsyb2" path="res://sprites/UCO wizard LANZANDO.png" id="7_ij1yw"]
+[ext_resource type="Texture2D" uid="uid://p7k3sufeig55" path="res://sprites/UCO wizard PESCANDO.png" id="8_g3c1f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7rld"]
+bg_color = Color(0.0784314, 0.72549, 0.14902, 1)
+
+[sub_resource type="Animation" id="Animation_xxfe7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Minijuego/UcoWizardLanzando:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minijuego/UcoWizard:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Minijuego/UcoWizardPescando:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qxyl5"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Minijuego/UcoWizard:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minijuego/UcoWizardLanzando:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Minijuego/UcoWizardPescando:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayuvh"]
+_data = {
+&"RESET": SubResource("Animation_xxfe7"),
+&"new_animation": SubResource("Animation_qxyl5")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Minijuego" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_i2uqe")
+
+[node name="Casa" type="TextureRect" parent="Minijuego"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("2_ig4hx")
+
+[node name="MarcoMadera" type="TextureRect" parent="Minijuego"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 612.0
+offset_right = 1112.0
+offset_bottom = 647.0
+grow_horizontal = 0
+texture = ExtResource("3_08dbg")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Minijuego/MarcoMadera"]
+custom_minimum_size = Vector2(72, 270)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -150.5
+offset_right = 45.0
+offset_bottom = 119.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Caja" type="Control" parent="Minijuego/MarcoMadera/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Minijuego/MarcoMadera/HBoxContainer/Caja"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+color = Color(0.462745, 0.298039, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Minijuego/MarcoMadera/HBoxContainer/Caja/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="Minijuego/MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.0545417, 0.439501, 0.600261, 1)
+
+[node name="Catch" type="ColorRect" parent="Minijuego/MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -209.0
+grow_horizontal = 2
+color = Color(0.818617, 0, 0.236488, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Minijuego/MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.037
+anchor_top = 0.004
+anchor_right = 0.973
+anchor_bottom = 1.0
+offset_left = 0.000999987
+offset_top = -0.016
+offset_right = 696.729
+offset_bottom = 427.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.035, 0.033)
+texture = ExtResource("4_tm2qp")
+expand_mode = 1
+
+[node name="MovPez" type="Timer" parent="Minijuego/MarcoMadera/HBoxContainer/Caja"]
+autostart = true
+
+[node name="Progreso" type="Control" parent="Minijuego/MarcoMadera/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Minijuego/MarcoMadera/HBoxContainer/Progreso"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+color = Color(0.462745, 0.298039, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Minijuego/MarcoMadera/HBoxContainer/Progreso/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ProgressBar" type="ProgressBar" parent="Minijuego/MarcoMadera/HBoxContainer/Progreso/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_t7rld")
+value = 50.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("5_74cd1")
+
+[node name="Timer" type="Timer" parent="Minijuego/MarcoMadera/HBoxContainer/Progreso"]
+wait_time = 0.1
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Minijuego"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ayuvh")
+}
+autoplay = "new_animation"
+
+[node name="UcoWizard" type="Sprite2D" parent="Minijuego"]
+position = Vector2(496.943, 497.947)
+rotation = 3.14159
+scale = Vector2(2.095, -2.095)
+texture = ExtResource("6_ajgw2")
+
+[node name="UcoWizardLanzando" type="Sprite2D" parent="Minijuego"]
+position = Vector2(532.905, 500.79)
+rotation = 3.14159
+scale = Vector2(0.085, -0.085)
+texture = ExtResource("7_ij1yw")
+
+[node name="UcoWizardPescando" type="Sprite2D" parent="Minijuego"]
+position = Vector2(442, 497)
+rotation = 3.14159
+scale = Vector2(0.085, -0.085)
+texture = ExtResource("8_g3c1f")
+
+[connection signal="timeout" from="Minijuego/MarcoMadera/HBoxContainer/Caja/MovPez" to="Minijuego" method="_on_mov_pez_timeout"]
+[connection signal="timeout" from="Minijuego/MarcoMadera/HBoxContainer/Progreso/Timer" to="Minijuego/MarcoMadera/HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar" method="_on_timer_timeout"]

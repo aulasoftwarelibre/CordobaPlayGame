@@ -1,39 +1,129 @@
-[gd_scene load_steps=2 format=3 uid="uid://buh5e5lfignvv"]
+[gd_scene load_steps=7 format=3 uid="uid://buh5e5lfignvv"]
 
 [ext_resource type="Script" uid="uid://bmgpn551bqeft" path="res://Scripts/game_over.gd" id="1_40baj"]
+[ext_resource type="Texture2D" uid="uid://d4eq3rtei4eby" path="res://sprites/Sprite_madera.jpg" id="2_lmvlt"]
+[ext_resource type="Texture2D" uid="uid://b0iet7g430cdi" path="res://sprites/UCO wizard SAD.png" id="3_7ed8v"]
+[ext_resource type="Texture2D" uid="uid://hycbra8nb8cn" path="res://sprites/Anzuelo.png" id="4_h535o"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_7ed8v"]
+font_color = Color(0.666667, 0.305882, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h535o"]
+font_size = 24
+font_color = Color(0.666024, 0.304976, 4.33177e-06, 1)
 
 [node name="HasPerdido" type="CanvasLayer"]
 script = ExtResource("1_40baj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = -1
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lmvlt")
+stretch_mode = 1
+
+[node name="CajaDescripcion" type="ColorRect" parent="."]
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.469
+anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 0.0879822
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -506.0
+offset_top = 139.0
+offset_right = 4.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898039, 0.913725, 0.552941, 0.913725)
+
+[node name="Descripcion" type="Label" parent="CajaDescripcion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -24.5
+offset_right = 257.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "El pez ha escapada, has puesto al mago triste, Suerte en la proxima"
+label_settings = SubResource("LabelSettings_7ed8v")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Boton" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = -42.5
+offset_right = 334.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898039, 0.913725, 0.552941, 0.913725)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Boton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -33.0
+offset_right = 100.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="Boton/VBoxContainer"]
 layout_mode = 2
-text = "Has perdido"
+text = "Mala Suerte!!"
+label_settings = SubResource("LabelSettings_h535o")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/Label"]
-layout_mode = 0
-offset_left = -13.0
-offset_top = 21.0
-offset_right = 106.0
-offset_bottom = 52.0
-text = "Nueva partida
+[node name="Button" type="Button" parent="Boton/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = 15.5
+offset_right = 59.5
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ir a Inicio
 "
 icon_alignment = 1
 
-[connection signal="button_down" from="VBoxContainer/Label/Button" to="." method="_on_button_button_down"]
+[node name="MagoTriste" type="TextureRect" parent="."]
+offset_left = 119.0
+offset_top = 35.0
+offset_right = 2619.0
+offset_bottom = 2535.0
+scale = Vector2(0.165, 0.165)
+texture = ExtResource("3_7ed8v")
+
+[node name="Anzuelo" type="TextureRect" parent="."]
+offset_left = 520.0
+offset_top = 357.0
+offset_right = 584.0
+offset_bottom = 421.0
+rotation = 0.84037
+texture = ExtResource("4_h535o")
+
+[connection signal="button_down" from="Boton/VBoxContainer/Label/Button" to="." method="_on_button_button_down"]
