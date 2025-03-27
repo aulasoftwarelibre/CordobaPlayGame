@@ -11,7 +11,7 @@ extends Control
 
 @export var catchPeso: float = 100
 @export var tMin: float = 0.2
-@export var tMax: float = 3.5
+@export var tMax: float = 3.25
 @export var pezVel: float = 0.4
 @export var catchLevantar: float = 250
 @export var velCompletado: float = 0.08 #guarrada historica pero para que el catch no salga de la barra

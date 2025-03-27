@@ -8,8 +8,8 @@ extends Control
 @onready var pBar: BarraProgreso = $MarcoMadera/HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar
 
 @export var catchPeso: float = 100
-@export var tMin: float = 0.1
-@export var tMax: float = 3.25
+@export var tMin: float = 0
+@export var tMax: float = 2.5
 @export var pezVel: float = 0.4
 @export var catchLevantar: float = 250
 @export var velCompletado: float = 0.08 #guarrada historica pero para que el catch no salga de la barra
@@ -32,7 +32,7 @@ func _process(delta):
 		animation_player.play("new_animation")
 		anim=true
 	if pBar.value>=100:
-		get_tree().change_scene_to_file("res://Escenas/Niveles/Nivel6/WinScreenL6.tscn")
+		get_tree().change_scene_to_file("res://Escenas/Niveles/Nivel7/WinScreenL7.tscn")
 	
 	if Input.is_action_pressed("Pescar"):
 		if catch.position.y>yMin:

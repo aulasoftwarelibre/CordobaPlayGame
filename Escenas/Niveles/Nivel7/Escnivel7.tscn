@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bqret2ueh7lu"]
 
-[ext_resource type="Script" uid="uid://du2duunpi61ii" path="res://Escenas/Niveles/Nivel6/GameControlN6.gd" id="1_6yfe2"]
+[ext_resource type="Script" uid="uid://bfavieo5ltndo" path="res://Escenas/Niveles/Nivel7/GameControlN7.gd" id="1_fsmtb"]
 [ext_resource type="Texture2D" uid="uid://dyxsgwgmcjn5u" path="res://sprites/Fondo.jpeg" id="2_0hj2j"]
 [ext_resource type="Texture2D" uid="uid://bn7qht0euidh8" path="res://sprites/Marco madera.png" id="3_rychf"]
 [ext_resource type="Texture2D" uid="uid://caxjd046sc15m" path="res://sprites/NORM.png" id="4_3u7hr"]
@@ -104,7 +104,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_6yfe2")
+script = ExtResource("1_fsmtb")
 
 [node name="Casa" type="TextureRect" parent="Minijuego"]
 layout_mode = 0
@@ -175,7 +175,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -209.0
+offset_bottom = -229.0
 grow_horizontal = 2
 color = Color(0.818617, 0, 0.236488, 1)
 

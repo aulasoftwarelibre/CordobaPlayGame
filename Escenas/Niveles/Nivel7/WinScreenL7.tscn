@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://djde3abq6cxvt"]
 
-[ext_resource type="Script" uid="uid://cvphjf63xti8c" path="res://Escenas/Niveles/Nivel6/WinScreenL6.gd" id="1_og1jt"]
+[ext_resource type="Script" uid="uid://wxndypnhqovn" path="res://Escenas/Niveles/Nivel7/WinScreenL7.gd" id="1_c7y4m"]
 [ext_resource type="Texture2D" uid="uid://d4eq3rtei4eby" path="res://sprites/Sprite_madera.jpg" id="2_re5yf"]
 [ext_resource type="Texture2D" uid="uid://d240hjn8aqnb0" path="res://sprites/PEZ SALCHICHA 2.png" id="3_c7y4m"]
 
@@ -12,7 +12,7 @@ font_color = Color(0.666024, 0.304976, 4.33177e-06, 1)
 font_color = Color(0.666667, 0.305882, 0, 1)
 
 [node name="HasPerdido" type="CanvasLayer"]
-script = ExtResource("1_og1jt")
+script = ExtResource("1_c7y4m")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -72,7 +72,7 @@ offset_right = 59.5
 offset_bottom = 46.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Ir a nivel seis
+text = "Ir al final
 "
 icon_alignment = 1
 
