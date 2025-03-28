@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard Personalizable</title>
+  <style>
+    /* Variables globales para colores y fondo */
+    :root {
+      --background-image: url('sprites/Sprite_madera.jpg'); /* Cambia la imagen por defecto aquí */
+      --primary-color: #3498db;
+      --secondary-color: #2ecc71;
+      --text-color: #333;
+      --table-header-bg: #2980b9;
+      --table-header-color: #fff;
+      --modal-bg: #fff;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: var(--background-image);
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: var(--text-color);
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: var(--table-header-bg);
+      color: var(--table-header-color);
+    }
+    button {
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: var(--secondary-color);
+    }
+    .pagination {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .pagination button {
+      margin: 0 2px;
+    }
+    /* Estilos para modales */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background: var(--modal-bg);
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 5px;
+      width: 300px;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    input[type="text"], input[type="number"], select {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0 10px 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Leaderboard</h1>
+    <table id="leaderboardTable">
+      <thead>
+        <tr>
+          <th>Nickname</th>
+          <th>Tiempo</th>
+          <th>Nivel Máximo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Se rellenará dinámicamente -->
+      </tbody>
+    </table>
+    <div class="pagination" id="pagination">
+      <!-- Controles de paginación -->
+    </div>
+    <div style="margin-top: 20px; text-align: center;">
+      <button id="addBtn">Añadir nuevos datos</button>
+      <button id="modifyBtn">Modificar</button>
+    </div>
+  </div>
+
+  <!-- Modal para Añadir Nuevo Registro -->
+  <div id="addModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeAddModal">&times;</span>
+      <h2>Añadir Registro</h2>
+      <label>Nickname:</label>
+      <input type="text" id="newNickname">
+      <label>Tiempo:</label>
+      <input type="number" id="newTime">
+      <label>Nivel Máximo:</label>
+      <input type="number" id="newLevel">
+      <button id="saveNewRecord">Guardar</button>
+    </div>
+  </div>
+
+  <!-- Modal para Modificar/Eliminar Registro -->
+  <div id="modifyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModifyModal">&times;</span>
+      <h2>Modificar Registro</h2>
+      <label>Seleccione registro:</label>
+      <select id="recordSelect">
+        <!-- Opciones se llenan dinámicamente -->
+      </select>
+      <div id="modifyOptions" style="display:none; margin-top:10px;">
+        <label>Nickname:</label>
+        <input type="text" id="modNickname">
+        <label>Tiempo:</label>
+        <input type="number" id="modTime">
+        <label>Nivel Máximo:</label>
+        <input type="number" id="modLevel">
+        <button id="updateRecord">Actualizar</button>
+        <button id="deleteRecord" style="background-color: red;">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Notificación de Posición -->
+  <div id="notificationModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeNotificationModal">&times;</span>
+      <p id="notificationText"></p>
+    </div>
+  </div>
+
+  <script>
+    // Variables y configuración inicial
+    let records = [];
+    const recordsPerPage = 10;
+    let currentPage = 1;
+
+    // Cargar registros desde LocalStorage
+    function loadRecords() {
+      const stored = localStorage.getItem('leaderboardRecords');
+      records = stored ? JSON.parse(stored) : [];
+    }
+
+    // Guardar registros en LocalStorage
+    function saveRecords() {
+      localStorage.setItem('leaderboardRecords', JSON.stringify(records));
+    }
+
+    // Función de ordenamiento:
+    // 1. Nivel máximo de mayor a menor
+    // 2. Tiempo de menor a mayor
+    // 3. Si empatan, el registro más antiguo (por timestamp) queda primero
+    function sortRecords() {
+      records.sort((a, b) => {
+        if (b.level !== a.level) {
+          return b.level - a.level; // Descendente en nivel
+        }
+        if (a.time !== b.time) {
+          return a.time - b.time; // Ascendente en tiempo
+        }
+        return a.timestamp - b.timestamp; // Ascendente en timestamp
+      });
+    }
+
+    // Renderizar la tabla con los registros paginados
+    function renderTable() {
+      sortRecords();
+      const tbody = document.querySelector('#leaderboardTable tbody');
+      tbody.innerHTML = "";
+      const startIndex = (currentPage - 1) * recordsPerPage;
+      const endIndex = startIndex + recordsPerPage;
+      const pageRecords = records.slice(startIndex, endIndex);
+      pageRecords.forEach(record => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${record.nickname}</td><td>${record.time}</td><td>${record.level}</td>`;
+        tbody.appendChild(tr);
+      });
+      renderPagination();
+    }
+
+    // Renderizar controles de paginación
+    function renderPagination() {
+      const paginationDiv = document.getElementById('pagination');
+      paginationDiv.innerHTML = "";
+      const totalPages = Math.ceil(records.length / recordsPerPage);
+      if (totalPages <= 1) return;
+      if (currentPage > 1) {
+        const prevBtn = document.createElement('button');
+        prevBtn.textContent = "Anterior";
+        prevBtn.onclick = () => { currentPage--; renderTable(); };
+        paginationDiv.appendChild(prevBtn);
+      }
+      paginationDiv.innerHTML += ` Página ${currentPage} de ${totalPages} `;
+      if (currentPage < totalPages) {
+        const nextBtn = document.createElement('button');
+        nextBtn.textContent = "Siguiente";
+        nextBtn.onclick = () => { currentPage++; renderTable(); };
+        paginationDiv.appendChild(nextBtn);
+      }
+    }
+
+    // Mostrar u ocultar modales
+    function showModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+    }
+    function hideModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+    }
+
+    // Mostrar notificación de posición
+    function showNotification(message) {
+      document.getElementById('notificationText').textContent = message;
+      showModal("notificationModal");
+    }
+
+    // Calcular la posición global de un registro
+    function getRecordPosition(newRecord) {
+      sortRecords();
+      return records.findIndex(record => record.timestamp === newRecord.timestamp) + 1;
+    }
+
+    // Eventos para el Modal de Añadir
+    document.getElementById("addBtn").addEventListener("click", () => {
+      document.getElementById("newNickname").value = "";
+      document.getElementById("newTime").value = "";
+      document.getElementById("newLevel").value = "";
+      showModal("addModal");
+    });
+    document.getElementById("closeAddModal").addEventListener("click", () => {
+      hideModal("addModal");
+    });
+    document.getElementById("saveNewRecord").addEventListener("click", () => {
+      const nickname = document.getElementById("newNickname").value.trim();
+      const time = parseFloat(document.getElementById("newTime").value);
+      const level = parseInt(document.getElementById("newLevel").value);
+      if (nickname === "" || isNaN(time) || isNaN(level)) {
+        alert("Por favor, ingresa todos los datos correctamente.");
+        return;
+      }
+      const newRecord = { nickname, time, level, timestamp: Date.now() };
+      records.push(newRecord);
+      saveRecords();
+      hideModal("addModal");
+      renderTable();
+      const pos = getRecordPosition(newRecord);
+      showNotification("Tu puesto es: " + pos);
+    });
+
+    // Eventos para el Modal de Modificar/Eliminar
+    document.getElementById("modifyBtn").addEventListener("click", () => {
+      populateRecordSelect();
+      document.getElementById("modifyOptions").style.display = "none";
+      showModal("modifyModal");
+    });
+    document.getElementById("closeModifyModal").addEventListener("click", () => {
+      hideModal("modifyModal");
+    });
+
+    // Llenar el select con los registros (ordenados)
+    function populateRecordSelect() {
+      const select = document.getElementById("recordSelect");
+      select.innerHTML = "";
+      sortRecords();
+      records.forEach((record, index) => {
+        const option = document.createElement("option");
+        option.value = index;
+        option.textContent = `#${index + 1} - ${record.nickname} | Tiempo: ${record.time} | Nivel: ${record.level}`;
+        select.appendChild(option);
+      });
+    }
+    // Al cambiar la selección, mostrar los datos para modificar
+    document.getElementById("recordSelect").addEventListener("change", () => {
+      const index = document.getElementById("recordSelect").value;
+      if(index === "") return;
+      const record = records[index];
+      document.getElementById("modNickname").value = record.nickname;
+      document.getElementById("modTime").value = record.time;
+      document.getElementById("modLevel").value = record.level;
+      document.getElementById("modifyOptions").style.display = "block";
+    });
+    // Actualizar registro
+    document.getElementById("updateRecord").addEventListener("click", () => {
+      const index = document.getElementById("recordSelect").value;
+      if(index === "") return;
+      const nickname = document.getElementById("modNickname").value.trim();
+      const time = parseFloat(document.getElementById("modTime").value);
+      const level = parseInt(document.getElementById("modLevel").value);
+      if (nickname === "" || isNaN(time) || isNaN(level)) {
+        alert("Por favor, ingresa todos los datos correctamente.");
+        return;
+      }
+      records[index].nickname = nickname;
+      records[index].time = time;
+      records[index].level = level;
+      saveRecords();
+      hideModal("modifyModal");
+      renderTable();
+    });
+    // Eliminar registro
+    document.getElementById("deleteRecord").addEventListener("click", () => {
+      const index = document.getElementById("recordSelect").value;
+      if(index === "") return;
+      if (confirm("¿Estás seguro de eliminar este registro?")) {
+        records.splice(index, 1);
+        saveRecords();
+        hideModal("modifyModal");
+        renderTable();
+      }
+    });
+
+    // Cerrar modales al hacer clic fuera de ellos
+    window.onclick = function(event) {
+      const modals = ["addModal", "modifyModal", "notificationModal"];
+      modals.forEach(id => {
+        const modal = document.getElementById(id);
+        if (event.target === modal) {
+          hideModal(id);
+        }
+      });
+    };
+
+    // Cerrar notificación
+    document.getElementById("closeNotificationModal").addEventListener("click", () => {
+      hideModal("notificationModal");
+    });
+
+    // Inicializar
+    loadRecords();
+    renderTable();
+  </script>
+</body>
+</html>
