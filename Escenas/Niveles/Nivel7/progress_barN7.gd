@@ -1,7 +1,7 @@
-class_name BarraProgreso
+
 extends ProgressBar
 
-@export var val: int = 1.5
+@export var val: int = 1
 
 func _on_timer_timeout() -> void:
 	value-= val

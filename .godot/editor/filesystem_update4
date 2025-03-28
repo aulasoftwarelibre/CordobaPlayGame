@@ -1,10 +1,4 @@
 res://Escenas/Niveles/Nivel7/Escnivel7.tscn
-res://Escenas/Niveles/Nivel1/Escnivel1.tscn
-res://Escenas/Niveles/Nivel2/Escnivel2.tscn
-res://Escenas/Niveles/Nivel3/Escnivel3.tscn
-res://Escenas/Niveles/Nivel4/Escnivel4.tscn
-res://Escenas/Niveles/Nivel5/Escnivel5.tscn
-res://Escenas/Niveles/Nivel6/Escnivel6.tscn
+res://Scripts/progress_bar.gd
 res://Escenas/Niveles/Nivel7/GameControlN7.gd
-res://Escenas/Niveles/Nivel7/WinScreenL7.tscn
-res://Escenas/Niveles/Nivel6/WinScreenL6.tscn
+res://Escenas/Niveles/Nivel7/progress_barN7.gd

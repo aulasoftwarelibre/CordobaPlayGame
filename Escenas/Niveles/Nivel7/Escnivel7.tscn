@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dyxsgwgmcjn5u" path="res://sprites/Fondo.jpeg" id="2_0hj2j"]
 [ext_resource type="Texture2D" uid="uid://bn7qht0euidh8" path="res://sprites/Marco madera.png" id="3_rychf"]
 [ext_resource type="Texture2D" uid="uid://caxjd046sc15m" path="res://sprites/NORM.png" id="4_3u7hr"]
-[ext_resource type="Script" uid="uid://dlvx5y00nu6lo" path="res://Scripts/progress_bar.gd" id="5_oqcad"]
+[ext_resource type="Script" uid="uid://bc67vao4gbgha" path="res://Escenas/Niveles/Nivel7/progress_barN7.gd" id="5_fsmtb"]
 [ext_resource type="Texture2D" uid="uid://bmexfcts150a7" path="res://sprites/UCO wizard.png" id="6_f5sii"]
 [ext_resource type="Texture2D" uid="uid://l2t5hqmtsyb2" path="res://sprites/UCO wizard LANZANDO.png" id="7_mnlio"]
 [ext_resource type="Texture2D" uid="uid://p7k3sufeig55" path="res://sprites/UCO wizard PESCANDO.png" id="8_cslw0"]
@@ -233,7 +233,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_t7rld")
 value = 50.0
 fill_mode = 3
 show_percentage = false
-script = ExtResource("5_oqcad")
+script = ExtResource("5_fsmtb")
 
 [node name="Timer" type="Timer" parent="Minijuego/MarcoMadera/HBoxContainer/Progreso"]
 wait_time = 0.1

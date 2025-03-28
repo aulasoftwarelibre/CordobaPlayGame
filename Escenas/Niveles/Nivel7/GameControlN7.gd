@@ -5,7 +5,7 @@ extends Control
 @onready var yMaxSalto = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.size.y)-pez.size.y*pez.scale.y    
 @onready var yMin = int($MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect.position.y)
 @onready var catch = $MarcoMadera/HBoxContainer/Caja/ColorRect/MarginContainer/ColorRect/Catch
-@onready var pBar: BarraProgreso = $MarcoMadera/HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar
+@onready var pBar= $MarcoMadera/HBoxContainer/Progreso/ColorRect/MarginContainer/ProgressBar
 
 @export var catchPeso: float = 100
 @export var tMin: float = 0
